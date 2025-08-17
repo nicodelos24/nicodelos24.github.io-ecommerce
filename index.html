@@ -31,9 +31,20 @@
           </li>
           <li class="nav-item">
           </li>
-          <li class ="nav-item">
-            <a href="login.html" class="nav-link">Iniciar sesion</a>
-          </li>
+
+
+          <!-- Esto se ve cuando no hay usuario -->
+        <li class="nav-item" id="nav-login">
+          <a href="login.html" class="nav-link">Iniciar sesión</a>
+        </li>
+
+        <!-- cuando hay usuario -->
+        <li class="nav-item" id="nav-usuario">
+          <a class="nav-link" href="#" id="nombreUsuario"></a>
+        </li>
+        <li class="nav-item" id="nav-logout">
+          <a class="nav-link" href="#" id="cerrarSesion">Cerrar sesión</a>
+        </li>
         </ul>
       </div>
     </div>
@@ -85,12 +96,14 @@
       <p class="float-end">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
     </div>
   </footer>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/index.js"></script>
   <script src="js/init.js"></script>
+  
 </body>
 
 </html>
