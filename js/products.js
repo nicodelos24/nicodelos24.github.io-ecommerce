@@ -1,27 +1,35 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {  // Se supone que con esto carga el html
+                                                        // antes que se ejecute el js o algo asi
+
+
     const URL = "https://japceibal.github.io/emercado-api/cats_products/101.json";
-    const contenedor = document.getElementById("contenedor-productos");
+
+
+    const contenedor = document.getElementById("contenedor-productos");  //este es el id del products.html donde 
+                                                                        // aparecen los autos
 
     fetch(URL)
         .then(response => response.json())
         .then(data => {
-            mostrarProductos(data.products);
+            mostrarProductos(data.products);     //Acá todo el quilombo del fetch y cosa color
         })
         .catch(error => console.error("Error al obtener los productos:", error));
 
     function mostrarProductos(productos) {
-        contenedor.innerHTML = "";
+        contenedor.innerHTML = "";  //Por cada producto limpia todo el campo anterior
 
-        productos.forEach(prod => {
-            contenedor.innerHTML += `
+        productos.forEach(producto => {     
+                                    // y acá mete todos los datos al contenedor con la
+                                    // sintaxis fea esa del `${objeto.propiedad}`
+            contenedor.innerHTML += `  
                 <div class="producto">
-                    <img src="${prod.image}" alt="${prod.name}">
-                    <h3>${prod.name}</h3>
-                    <p>${prod.description}</p>
-                    <p><strong>Precio:</strong> ${prod.currency} ${prod.cost}</p>
-                    <p><strong>Vendidos:</strong> ${prod.soldCount}</p>
+                    <img src="${producto.image}" alt="${producto.name}">
+                    <h3>${producto.name}</h3>
+                    <p>${producto.description}</p>
+                    <p><strong>Precio:</strong> ${producto.currency} ${producto.cost}</p>
+                    <p><strong>Vendidos:</strong> ${producto.soldCount}</p>
                 </div>
             `;
-        });
+        });     // hay que cambiar el h3 p y strong dependiendo como quieramos decorar
     }
 });
