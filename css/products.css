@@ -1,0 +1,24 @@
+#background {
+    background-color: #ffddc8;
+}
+
+.productos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 20px; /* espacio entre tarjetas */
+    justify-items: center;
+}
+
+.producto{
+    background-color: #FFBD94;
+    border-radius: 20px;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+}
+
+.producto img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+}

@@ -22,12 +22,14 @@ document.addEventListener("DOMContentLoaded", () => {  // Se supone que con esto
                                     // y acá mete todos los datos al contenedor con la
                                     // sintaxis fea esa del `${objeto.propiedad}`
             contenedor.innerHTML += `  
-                <div class="producto">
-                    <img src="${producto.image}" alt="${producto.name}">
-                    <h3>${producto.name}</h3>
-                    <p>${producto.description}</p>
-                    <p><strong>Precio:</strong> ${producto.currency} ${producto.cost}</p>
-                    <p><strong>Vendidos:</strong> ${producto.soldCount}</p>
+                <div class="productos">
+                    <div class="producto">
+                        <img src="${producto.image}" alt="${producto.name}">
+                        <h3>${producto.name}</h3>
+                        <p>${producto.description}</p>
+                        <p><strong>Precio:</strong> ${producto.currency} ${producto.cost}</p>
+                        <p><strong>Vendidos:</strong> ${producto.soldCount}</p>
+                    </div>
                 </div>
             `;
         });     // hay que cambiar el h3 p y strong dependiendo como quieramos decorar
