@@ -1,6 +1,18 @@
-#background {
+ html, body {
+  height: 100%;
+  margin: 0;
+  padding-bottom: 20px;
+  
+
+}
+
+#background  {
     background-color: #ffddc8;
-    }
+}
+
+#background .producto {
+    margin-bottom: 50px;
+}
 
 #titulo{
     font-weight: bold;
@@ -20,7 +32,8 @@
     justify-content: center;
     margin-top: 50px;
     width: 80%;
-    margin: 50px auto;
+    margin: 50px auto 20px;
+    margin-bottom: 20px;
 }
 
 .producto{
@@ -29,7 +42,12 @@
     border-radius: 30px;
     padding: 15px;
     width: 250px;
-    text-align: center;
+    text-align: center
+}
+
+.producto p{
+    text-align: left;
+    margin-top: 5px;
 }
 
 .producto img {
