@@ -24,10 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {  // Se supone que con esto
             contenedor.innerHTML += `  
                 <div class="producto">
                     <img src="${producto.image}" alt="${producto.name}">
-                    <h3>${producto.name}</h3>
+                    <h3 class="titulo-producto">${producto.name}</h3>
                     <p>${producto.description}</p>
-                    <p><strong>Precio:</strong> ${producto.currency} ${producto.cost}</p>
-                    <p><strong>Vendidos:</strong> ${producto.soldCount}</p>
+                    <p>Precio: ${producto.currency} ${producto.cost}</p>
+                    <p>Vendidos: ${producto.soldCount}</p>
                 </div>
             `;
         });     // hay que cambiar el h3 p y strong dependiendo como quieramos decorar
