@@ -227,3 +227,30 @@ a.custom-card:hover {
   border: 0cm;
   font-size: 15px;
 }
+.login-container {
+  position:relative;
+}
+
+.deco {
+position: absolute;
+}
+
+.imgIzq {
+  top:30%;
+  left:0%;
+
+  max-width: 126px;
+  max-height: 180px;
+
+}
+.imgDer {
+  top:42%;
+  right:0%;
+  max-width: 150px;
+  max-height: 150px;
+  border-style:solid;
+  border-color: rgba(128, 128, 128, 0.336);
+  border-left: rgba(128, 128, 128, 0.26);
+  border-width: 1px;
+  border-right: rgba(128, 128, 128, 0.329);
+}
