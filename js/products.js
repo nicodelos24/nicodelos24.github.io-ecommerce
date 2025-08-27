@@ -21,13 +21,15 @@ document.addEventListener("DOMContentLoaded", () => {  // Se supone que con esto
         productos.forEach(producto => {     
                                     // y acá mete todos los datos al contenedor con la
                                     // sintaxis fea esa del `${objeto.propiedad}`
-            contenedor.innerHTML += `  
-                <div class="producto">
-                    <img src="${producto.image}" alt="${producto.name}">
-                    <h3 class="titulo-producto">${producto.name}</h3>
-                    <p>${producto.description}</p>
-                    <p>Precio: ${producto.currency} ${producto.cost}</p>
-                    <p>Vendidos: ${producto.soldCount}</p>
+            contenedor.innerHTML += `
+                <div class="col-12 col-sm-4">  
+                    <div class="producto">
+                        <img src="${producto.image}" alt="${producto.name}">
+                        <h3 class="titulo-producto">${producto.name}</h3>
+                        <p>${producto.description}</p>
+                        <p>Precio: ${producto.currency} ${producto.cost}</p>
+                        <p>Vendidos: ${producto.soldCount}</p>
+                    </div>
                 </div>
             `;
         });     // hay que cambiar el h3 p y strong dependiendo como quieramos decorar
