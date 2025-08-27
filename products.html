@@ -31,63 +31,40 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <!-- <li class="nav-item">    Link a login
-            <a href="login.html" class="nav-link">Iniciar sesion</a>
+          <li class="nav-item" id="nav-login">
+            <a href="login.html" class="nav-link">Iniciar sesión</a>
           </li>
-        -->
-          <!-- Esto se ve cuando no hay usuario -->
-        <li class="nav-item" id="nav-login">
-          <a href="login.html" class="nav-link">Iniciar sesión</a>
-        </li>
-
-        <!-- cuando hay usuario -->
-        <li class="nav-item" id="nav-usuario">
-          <a class="nav-link" href="#" id="nombreUsuario"></a>
-        </li>
-        <li class="nav-item" id="nav-logout">
-          <a class="nav-link" href="#" id="cerrarSesion">Cerrar sesión</a>
-        </li>
+          <li class="nav-item" id="nav-usuario">
+            <a class="nav-link" href="#" id="nombreUsuario"></a>
+          </li>
+          <li class="nav-item" id="nav-logout">
+            <a class="nav-link" href="#" id="cerrarSesion">Cerrar sesión</a>
+          </li>
 
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- 
-  <main class="pb-5 container">
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-      </div>
-    </div>
-  </main>             Esto lo saco que es el error cartel de error -->
-
-  <h2 id="titulo">Autos</h2>
-  <div id="contenedor-productos">
-    <!-- el id lo usa el js para mostrar los autos  -->
+	<main>
+		<div class="container">
+			<div id="contenedor-productos" class="row g-3"></div>
+		</div>
+  </main>
+	
     <footer class="text-muted">
       <div class="container">
         <p class="float-end">
           <a href="#">Volver arriba</a>
         </p>
-        <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+    	    <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
         </p>
       </div>
-      </div>
-    <!--  
     </footer>
-    <div id="spinner-wrapper">
-      <div class="lds-ring">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-    -->
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/init.js"></script>
-      <script src="js/products.js"></script>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/products.js"></script>
 
 </div>
 </body>
