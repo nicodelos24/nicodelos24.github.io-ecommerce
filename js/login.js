@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("loginForm");
-    const usuario = document.getElementById("usuario");
+    const email = document.getElementById("email");
     const password = document.getElementById("password");
 
     form.addEventListener("submit", (e) => {
