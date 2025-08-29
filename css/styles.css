@@ -254,3 +254,21 @@ position: absolute;
   border-width: 1px;
   border-right: rgba(128, 128, 128, 0.329);
 }
+
+
+@media (max-width: 767px) {
+  .imgDer,
+  .imgIzq {
+    display: none;
+  }
+  .logo {
+    width:300px;
+  }
+  #boton {
+    margin:auto;
+  }
+  #loginForm div {
+    width:260px;
+  }
+
+}
