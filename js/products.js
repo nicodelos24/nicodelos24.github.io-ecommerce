@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const URL = "https://japceibal.github.io/emercado-api/cats_products/101.json";
+  const catID = localStorage.getItem("catID");
+  const URL = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
   const contenedor = document.getElementById("contenedor-productos");
 
   fetch(URL)
