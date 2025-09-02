@@ -2,10 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const catID = localStorage.getItem("catID");
   const URL = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
   const contenedor = document.getElementById("contenedor-productos");
+  const precioMinInput = document.getElementById("precio-min");
+  const precioMaxInput = document.getElementById("precio-max");
+  const filtrarBtn = document.getElementById("filtrar-precio");
+  let productosOriginales = [];
 
   fetch(URL)
     .then(r => r.json())
     .then(data => {
+      productosOriginales = data.products;
       mostrarProductos(data.products);
     })
     .catch(err => console.error("Error al obtener los productos:", err));
@@ -36,4 +41,12 @@ document.addEventListener("DOMContentLoaded", () => {
     contenedor.appendChild(frag);
     contenedor.setAttribute("aria-busy", "false");
   }
+  //se agrega el filtro de búsqueda por nombre
+  filtrarBtn.addEventListener("click", () => {
+    const min = parseFloat(precioMinInput.value) || 0;
+    const max = parseFloat(precioMaxInput.value) || Infinity;
+    const filtrados = productosOriginales.filter(p => p.cost >= min && p.cost <= max);
+    mostrarProductos(filtrados);
+  });
+
 });
