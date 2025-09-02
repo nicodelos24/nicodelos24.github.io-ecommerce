@@ -48,5 +48,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const filtrados = productosOriginales.filter(p => p.cost >= min && p.cost <= max);
     mostrarProductos(filtrados);
   });
+  // --- Búsqueda en tiempo real ---
+    const buscadorInput = document.getElementById("buscador");
+      if (buscadorInput) {
+    const aplicarFiltros = () => {
+    const q = (buscadorInput.value || "").toLowerCase().trim();
 
+    const min = parseFloat(precioMinInput?.value) || 0;
+    const max = parseFloat(precioMaxInput?.value) || Infinity;
+      
+    const filtrados = productosOriginales.filter(p => {
+      const titulo = (p.name || "").toLowerCase();
+      const desc = (p.description || "").toLowerCase();
+      const coincideTexto = !q || titulo.includes(q) || desc.includes(q);
+      const dentroDeRango = (p.cost >= min && p.cost <= max);
+      return coincideTexto && dentroDeRango;
+    });
+
+    mostrarProductos(filtrados);
+  };
+
+  // Cada tecla filtra la lista
+  buscadorInput.addEventListener("input", aplicarFiltros);
+
+  // Cambios de rango de precios también filtran
+  precioMinInput?.addEventListener("input", aplicarFiltros);
+  precioMaxInput?.addEventListener("input", aplicarFiltros);
+}
 });
