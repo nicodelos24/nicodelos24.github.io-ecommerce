@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const precioMinInput = document.getElementById("precio-min");
   const precioMaxInput = document.getElementById("precio-max");
   const filtrarBtn = document.getElementById("filtrar-precio");
+  const ordenarSelect = document.getElementById("ordenar-select");
   let productosOriginales = [];
 
   fetch(URL)
@@ -41,29 +42,50 @@ document.addEventListener("DOMContentLoaded", () => {
     contenedor.appendChild(frag);
     contenedor.setAttribute("aria-busy", "false");
   }
+
+  function ordenarProductos(lista) {
+    if (!ordenarSelect) return lista;
+    switch (ordenarSelect.value) {
+      case "precio-asc":
+        return [...lista].sort((a, b) => a.cost - b.cost);
+      case "precio-desc":
+        return [...lista].sort((a, b) => b.cost - a.cost);
+      case "nombre-asc":
+        return [...lista].sort((a, b) => a.name.localeCompare(b.name));
+      case "nombre-desc":
+        return [...lista].sort((a, b) => b.name.localeCompare(a.name));
+      default:
+        return lista;
+    }
+  }
+
   //se agrega el filtro de búsqueda por nombre
+
   filtrarBtn.addEventListener("click", () => {
     const min = parseFloat(precioMinInput.value) || 0;
     const max = parseFloat(precioMaxInput.value) || Infinity;
-    const filtrados = productosOriginales.filter(p => p.cost >= min && p.cost <= max);
+    let filtrados = productosOriginales.filter(p => p.cost >= min && p.cost <= max);
+    filtrados = ordenarProductos(filtrados);
     mostrarProductos(filtrados);
   });
+
   // --- Búsqueda en tiempo real ---
     const buscadorInput = document.getElementById("buscador");
       if (buscadorInput) {
-    const aplicarFiltros = () => {
+  const aplicarFiltros = () => {
     const q = (buscadorInput.value || "").toLowerCase().trim();
-
     const min = parseFloat(precioMinInput?.value) || 0;
     const max = parseFloat(precioMaxInput?.value) || Infinity;
-      
-    const filtrados = productosOriginales.filter(p => {
+
+    let filtrados = productosOriginales.filter(p => {
       const titulo = (p.name || "").toLowerCase();
       const desc = (p.description || "").toLowerCase();
       const coincideTexto = !q || titulo.includes(q) || desc.includes(q);
       const dentroDeRango = (p.cost >= min && p.cost <= max);
       return coincideTexto && dentroDeRango;
     });
+
+    filtrados = ordenarProductos(filtrados);
 
     mostrarProductos(filtrados);
   };
@@ -74,5 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Cambios de rango de precios también filtran
   precioMinInput?.addEventListener("input", aplicarFiltros);
   precioMaxInput?.addEventListener("input", aplicarFiltros);
+  ordenarSelect?.addEventListener("change", aplicarFiltros);
 }
 });
