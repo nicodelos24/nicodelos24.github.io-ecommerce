@@ -48,27 +48,37 @@
     </div>
   </nav>
 
-	<main>
-		<div class="container">
-      <input type="number" id="precio-min" placeholder="Precio mínimo">
-      <input type="number" id="precio-max" placeholder="Precio máximo">
-      <button id="filtrar-precio">Filtrar</button>
-      <!-- Buscador de productos -->
-    <div class="mb-3">
-      <label for="buscador" class="form-label">Buscar productos</label>
-      <input type="search" id="buscador" class="form-control"
-         placeholder="Buscar por título o descripción..." aria-label="Buscar productos">
-    </div>
-			<div id="contenedor-productos"></div>
-		</div>
-  </main>
-	
+
+<div class="container" id="filtrado">
+  <div class="controls">
+    <input type="number" id="precio-min" placeholder="Precio mínimo">
+    <input type="number" id="precio-max" placeholder="Precio máximo">
+    <button id="filtrar-precio">Filtrar</button>
+
+    <label for="ordenar" class="form-label">Ordenar por:</label>
+    <select id="ordenar-select">
+      <option value="precio-asc">Precio: menor a mayor</option>
+      <option value="precio-desc">Precio: mayor a menor</option>
+      <option value="nombre-asc">Nombre: A → Z</option>
+      <option value="nombre-desc">Nombre: Z → A</option>
+    </select>
+  </div>
+
+  <div id="buscador">
+    <label for="buscador-input" class="form-label">Buscar productos</label>
+    <input type="search" id="buscador-input" class="form-control"
+      placeholder="Buscar por título o descripción..." aria-label="Buscar productos">
+  </div>
+</div>
+
+
+<div id="contenedor-productos"></div>
     <footer class="text-muted">
       <div class="container">
         <p class="float-end">
           <a href="#">Volver arriba</a>
         </p>
-    	    <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+    	  <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
         </p>
       </div>
     </footer>

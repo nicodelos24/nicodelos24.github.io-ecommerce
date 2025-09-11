@@ -94,3 +94,42 @@ html, body {
   line-height: 1.35;
 }
 
+#precio-min, #precio-max, #buscador-input {
+  padding-left: 0.7em;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+  font-size: 12px;
+  border-radius: 20em;
+  width: 18em;
+  border: 0
+}
+
+#filtrar-precio, #ordenar-select{
+  border: 1em;
+  border-color: #EE782F;
+  color: #EE782F;
+  border-radius: 20em;
+  padding: 0.5em;
+  background-color: rgb(255, 255, 255);
+  font-size: 12px;
+  margin-right: 0.5em;
+}
+
+#filtrado{
+  margin-top: 1rem;
+  font-size: 12px;
+  display: flex;
+}
+
+
+
+#buscador {
+  display: flex;
+  align-items: center; 
+  gap: 0.5em;    
+}
+
+.buscador-container label {
+  margin: 0;             
+}
+
