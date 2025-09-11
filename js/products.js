@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       col.innerHTML = `
         <article class="producto h-100">
           <img src="${p.image}" alt="${p.name}" class="img-fluid"
-               loading="lazy">
+              loading="lazy">
           <h3 class="titulo-producto">${p.name}</h3>
           <p>${p.description}</p>
           <p><strong>Precio:</strong> ${p.currency} ${p.cost}</p>
@@ -97,5 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
   precioMinInput?.addEventListener("input", aplicarFiltros);
   precioMaxInput?.addEventListener("input", aplicarFiltros);
   ordenarSelect?.addEventListener("change", aplicarFiltros);
+
+  ordenarSelect.addEventListener("click", ordenarProductos)
 }
 });
