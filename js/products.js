@@ -35,6 +35,15 @@ document.addEventListener("DOMContentLoaded", () => {
           <p><small>Vendidos: ${p.soldCount}</small></p>
         </article>
       `;
+       const card = col.querySelector(".producto");
+        const goToInfo = () => {
+          localStorage.setItem("productID", String(p.id));
+          window.location.href = "product-info.html";
+        };
+        card.addEventListener("click", goToInfo);
+        card.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") goToInfo();
+        });
 
       frag.appendChild(col);
     });
