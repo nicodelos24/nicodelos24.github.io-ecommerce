@@ -10,6 +10,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/products.css">
 </head>
 
 <body>
@@ -32,37 +33,48 @@
           </li>
           <li class="nav-item">
           </li>
+                    <li class="nav-item" id="nav-login">
+            <a href="login.html" class="nav-link">Iniciar sesión</a>
+          </li>
+          <li class="nav-item" id="nav-usuario">
+            <a class="nav-link" href="#" id="nombreUsuario"></a>
+          </li>
+          <li class="nav-item" id="nav-logout">
+            <a class="nav-link" href="#" id="cerrarSesion">Cerrar sesión</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    <div class="container my-4" id="product-ct">
-      <h1 id="p-name"></h1>
-
+    <div class="container my-5" id="product-ct">
+      
+      <h1 id="p-name" class="mb-4 ms-3"></h1>
       <section id="p-hero" class="row g-4 align-items-start">
         <div class="col-12 col-lg-7">
-          <img id="p-image-main" alt="Imagen del producto" class="img-fluid rounded mb-3">
-          <div id="p-thumbs" class="d-flex flex-wrap gap-2"></div>
+          <img id="p-image-main" alt="Imagen del producto" class="img-fluid rounded mb-4 ms-2 mt-1">
+          <div id="p-thumbs" class="d-flex gap-2 ms-4 mt-0"></div>
         </div>
-        <aside class="col-12 col-lg-5">
-          <p id="p-desc"></p>
-          <p><strong>Categoría:</strong> <span id="p-category"></span></p>
-          <p><strong>Vendidos:</strong> <span id="p-sold"></span></p>
-          <div class="border rounded p-3">
-            <p class="fs-4 m-0" id="p-price"></p>
-            <button id="p-buy" class="btn btn-primary mt-3">Comprar</button>
+        <aside class="col-12 col-lg-5 product-details mt-3">
+          <p id="p-desc" class="ms-4 mt-4"></p>
+          <div id="cat-prod" class="ms-2 mt-5">
+            <p><strong>Categoría:</strong> <span id="p-category"></span></p>
+            <p><strong>Vendidos:</strong> <span id="p-sold"></span></p>
+          </div>
+          <div class="p-3">
+            <p class="fs-4 ms-2 mt-5 mb-3" id="p-price"></p>
+            <button id="p-buy" class="btn btn-primary mt-5">Comprar</button>
           </div>
         </aside>
       </section>
 
-      <section class="mt-5" id="p-related">
+      <section class="mt-5 ms-2" id="p-related">
         <h2 class="h4">Productos relacionados</h2>
-        <div id="related-list" class="row g-3"></div>
+        <div id="related-list" class="row g-4 "></div>
       </section>
 
       <section class="mt-5" id="p-comments">
-        <h2 class="h4">Comentarios</h2>
+        <h2 class="h4 ms-4">Comentarios</h2>
         <div id="comments-list" class="vstack gap-3"></div>
       </section>
     </div>

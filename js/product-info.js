@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const col = document.createElement("div");
         col.className = "col-6 col-md-4 col-lg-3";
         col.innerHTML = `
-          <article class="card h-100" role="button" tabindex="0" aria-label="Ver ${rel.name}">
+          <article class="related-card h-100" role="button" tabindex="0" aria-label="Ver ${rel.name}">
             <img src="${rel.image}" class="card-img-top" alt="${rel.name}">
             <div class="card-body">
               <p class="card-text">${rel.name}</p>
