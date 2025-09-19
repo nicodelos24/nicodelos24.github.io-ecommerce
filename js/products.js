@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // --- Búsqueda en tiempo real ---
-    const buscadorInput = document.getElementById("buscador");
+    const buscadorInput = document.getElementById("buscador-input");
       if (buscadorInput) {
   const aplicarFiltros = () => {
     const q = (buscadorInput.value || "").toLowerCase().trim();
