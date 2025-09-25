@@ -33,7 +33,7 @@
           </li>
           <li class="nav-item">
           </li>
-                    <li class="nav-item" id="nav-login">
+          <li class="nav-item" id="nav-login">
             <a href="login.html" class="nav-link">Iniciar sesión</a>
           </li>
           <li class="nav-item" id="nav-usuario">
@@ -48,7 +48,7 @@
   </nav>
   <main>
     <div class="container my-5" id="product-ct">
-      
+
       <h1 id="p-name" class="mb-4 ms-3"></h1>
       <section id="p-hero" class="row g-4 align-items-start">
         <div class="col-12 col-lg-7">
@@ -76,8 +76,34 @@
       <section class="mt-5" id="p-comments">
         <h2 class="h4 ms-4">Comentarios</h2>
         <div id="comments-list" class="vstack gap-3"></div>
+
+
       </section>
+      <section id="comment-section" class="my-4 ms-2">
+
+        <div class="mb-3">
+          <label class="form-label d-block">¿Qué te pareció tu producto?</label>
+          <div id="star-rating" class="star-rating">
+            <span data-value="1">★</span>
+            <span data-value="2">★</span>
+            <span data-value="3">★</span>
+            <span data-value="4">★</span>
+            <span data-value="5">★</span>
+          </div>
+          <input type="hidden" id="comment-score" value="0">
+        </div>
+        <form id="comment-form">
+          <div class="mb-3">
+            <label for="comment-text" class="form-label">Deja tu comentario:</label>
+            <textarea id="comment-text" class="form-control" rows="3" placeholder="Escribe tu opinión"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </section>
+
     </div>
+
   </main>
 
   <footer class="text-muted">
@@ -85,7 +111,8 @@
       <p class="float-end">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
     </div>
   </footer>
   <div id="spinner-wrapper">

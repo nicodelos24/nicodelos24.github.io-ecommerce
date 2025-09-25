@@ -291,3 +291,27 @@ aside p {
   border-color: #ee782f31 !important;
 }
 
+/*Estrellitas de puntuación :D*/
+.star-rating {
+  font-size: 2.7rem;
+  color: #ddd;
+  cursor: pointer;
+  display: inline-flex;
+}
+
+
+.star-rating span.selected {
+  color: gold;
+}
+
+.star-rating span.hover {
+  color: gold;
+}
+
+
+#comment-section textarea {
+  max-width: 600px;
+  min-width:600px;
+  min-height: 100px;
+  max-height: 100px;
+}
