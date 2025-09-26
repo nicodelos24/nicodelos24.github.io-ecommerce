@@ -129,3 +129,48 @@ stars.forEach((star, index) => {
 document.getElementById("star-rating").addEventListener("mouseleave", () => {
   stars.forEach((s) => s.classList.remove("hover"));
 });
+
+
+const form = document.getElementById("comment-form");
+const textarea = document.getElementById("comment-text");
+const commentsCt = document.getElementById("comments-list");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const score = parseInt(scoreInput.value, 10) || 0;
+  const text = (textarea.value || "").trim();
+
+  if (!score || !text) {
+    alert("Elegí una calificación y escribí tu comentario.");
+    return;
+  }
+
+  const now = new Date();
+  const pad = (n) => String(n).padStart(2, "0");
+  const dateTime = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+
+  // Podés cambiar "Tú" por el nombre del usuario logueado si lo tenés guardado
+  const user = "Tú";
+
+  const art = document.createElement("article");
+  art.className = "border rounded p-3";
+  art.innerHTML = `
+    <header class="mb-1">
+      <strong>${user}</strong> · <span>${dateTime}</span> · <span>★${score}</span>
+    </header>
+    <p class="mb-0"></p>
+  `;
+  art.querySelector("p").textContent = text;
+
+  
+  commentsCt.prepend(art);
+
+  textarea.value = "";
+  scoreInput.value = "0";
+  stars.forEach((s) => s.classList.remove("selected"));
+
+  // Feedback sutil
+  alert("¡Gracias por tu opinión!");
+});
+
