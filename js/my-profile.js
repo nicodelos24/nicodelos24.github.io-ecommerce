@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const usuario = localStorage.getItem("usuario");
 
-  // Precarga el email del usuario la primera vez
+  // Precarga el email del usuario
   if (usuario) {
     emailInput.value = usuario;
   }
