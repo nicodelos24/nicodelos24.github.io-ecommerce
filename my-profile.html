@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/my-profile.css">
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -24,6 +25,7 @@
       }
     }
   </style>
+
 </head>
 
 <body>
@@ -46,23 +48,73 @@
           </li>
           <li class="nav-item">
           </li>
+          <li class="nav-item" id="nav-login">
+            <a href="login.html" class="nav-link">Iniciar sesión</a>
+          </li>
+
+          <!-- cuando hay usuario -->
+          <li class="nav-item dropdown" id="nav-usuario">
+            <a class="nav-link dropdown-toggle" href="#" id="nombreUsuario" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false"></a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nombreUsuario">
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li id="nav-logout"><a class="dropdown-item" href="#" id="cerrarSesion">Cerrar sesión</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
-  <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+
+  <main class="container profile-container mt-5">
+
+
+    <h2 class="mb-2 text-center">Mi perfil</h2>
+
+    <form id="profileForm" class="p-4">
+      <div class="mb-3 text-center">
+        <img id="profileImage" src="img/img_perfil.png" alt="Foto de perfil" class="rounded-circle mb-3"
+          style="width: 120px; height: 120px; object-fit: cover;">
+        <br>
+        <input type="file" id="imageInput" accept="image/*" class="form-control w-25 mx-auto d-none">
+        <label for="imageInput" class="boton ">Seleccionar imágen</label>
       </div>
-    </div>
+
+      <div class="w-25 mx-auto ">
+        <div class="mb-4">
+          <label for="firstName" class="form-label">Nombre</label>
+          <input type="text" class="form-control " id="firstName">
+        </div>
+        <div class="mb-4">
+          <label for="lastName" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="lastName">
+        </div>
+      </div>
+
+      <div class="w-25 mx-auto">
+        <div class="mb-4">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email">
+        </div>
+        <div class="mb-4">
+          <label for="phone" class="form-label">Teléfono de contacto</label>
+          <input type="tel" class="form-control" id="phone">
+        </div>
+      </div>
+
+      <button type="submit" id="boton" class="btn">Guardar cambios</button>
+    </form>
+        <img src="img/fuap.png" alt="" class="deco imgIzq">
+    <img src="img/fuap2.png" alt="" class="deco imgDer">
   </main>
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
         <a href="#">Volver arriba</a>
       </p>
-      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
     </div>
   </footer>
   <script src="js/bootstrap.bundle.min.js"></script>
