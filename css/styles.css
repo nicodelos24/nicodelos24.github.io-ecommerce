@@ -326,3 +326,10 @@ a:hover { opacity: .85; }
 #themeToggle.btn {
   margin-left: .75rem;
 }
+
+#miperfil {
+  background-color: #EE782F;
+  border-radius: 2em;
+  display: inline-block;
+  padding: 0.3em;
+}
