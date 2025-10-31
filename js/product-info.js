@@ -67,8 +67,32 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       $("#p-buy").addEventListener("click", () => {
-        alert("¡Producto agregado al carrito!");
-      });
+  // Obtener los datos del producto actual
+  const product = {
+    id: data.id,
+    name: data.name,
+    cost: data.cost,
+    currency: data.currency,
+    image: data.images[0],
+    quantity: 1
+  };
+
+  // Leer el carrito actual (si existe)
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Verificar si el producto ya está en el carrito
+  const existing = cart.find((item) => item.id === product.id);
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push(product);
+  }
+
+  // Guardar el carrito actualizado
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  alert("¡Producto agregado al carrito!");
+});
     })
     .catch((err) => {
       console.error(err);
