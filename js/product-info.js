@@ -30,9 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
           const btn = document.createElement("button");
           btn.type = "button";
           btn.className = "btn btn-outline-secondary p-1";
-          btn.innerHTML = `<img src="${src}" alt="Vista ${
-            i + 1
-          }" style="height:64px;object-fit:cover;">`;
+          btn.innerHTML = `<img src="${src}" alt="Vista ${i + 1
+            }" style="height:64px;object-fit:cover;">`;
           btn.addEventListener("click", () => {
             mainImg.src = src;
           });
@@ -67,32 +66,28 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       $("#p-buy").addEventListener("click", () => {
-  // Obtener los datos del producto actual
-  const product = {
-    id: data.id,
-    name: data.name,
-    cost: data.cost,
-    currency: data.currency,
-    image: data.images[0],
-    quantity: 1
-  };
+        const product = {
+          id: data.id,
+          name: data.name,
+          cost: Number(data.cost),
+          currency: data.currency,
+          image: Array.isArray(data.images) && data.images.length ? data.images[0] : "",
+          quantity: 1
+        };
 
-  // Leer el carrito actual (si existe)
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cart = CartUtils.loadCart();
+        const existing = cart.find(it => it.id === product.id);
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          cart.push(product);
+        }
+        CartUtils.saveCart(cart);
+        CartUtils.updateCartBadge();
 
-  // Verificar si el producto ya está en el carrito
-  const existing = cart.find((item) => item.id === product.id);
-  if (existing) {
-    existing.quantity += 1;
-  } else {
-    cart.push(product);
-  }
+        alert("¡Producto agregado al carrito!");
+      });
 
-  // Guardar el carrito actualizado
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-  alert("¡Producto agregado al carrito!");
-});
     })
     .catch((err) => {
       console.error(err);
@@ -117,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ct.appendChild(art);
       });
     })
-    .catch(() => {});
+    .catch(() => { });
 });
 
 // Estrellitas de calificación :D
@@ -187,7 +182,7 @@ form.addEventListener("submit", (e) => {
   `;
   art.querySelector("p").textContent = text;
 
-  
+
   commentsCt.prepend(art);
 
   textarea.value = "";

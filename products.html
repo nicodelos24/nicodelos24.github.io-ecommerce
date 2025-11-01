@@ -33,6 +33,12 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link position-relative" href="cart.html">
+              Mi carrito
+              <span data-cart-badge
+                class="position-absolute top-10 start-100 translate-middle badge rounded-pill bg-danger"
+                style="display:none;">0</span>
+            </a>
           </li>
           <li class="nav-item" id="nav-login">
             <a href="login.html" class="nav-link">Iniciar sesión</a>
@@ -89,7 +95,11 @@
     </footer>
 
   <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/cart-utils.js"></script>
+
   <script src="js/init.js"></script>
+  
+
   <script src="js/products.js"></script>
 
 </div>
