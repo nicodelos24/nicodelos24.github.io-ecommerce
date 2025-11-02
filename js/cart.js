@@ -3,6 +3,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("cartcontainer");
   const cart = CartUtils.loadCart();
 
+  const grandTotalEl = document.getElementById("grandTotal");
+
+function updateGrandTotal() {
+  const cartNow = CartUtils.loadCart();
+  let total = 0;
+  const ship = 500;
+
+  cartNow.forEach(item => {
+    const unit = Number(item.cost) || 0;
+    const qty = Number(item.quantity) || 1;
+    total += (unit * qty) + ship;
+  });
+
+  grandTotalEl.textContent = total;
+}
+
+
   if (!container) return;
 
   if (cart.length === 0) {
@@ -82,7 +99,11 @@ document.addEventListener("DOMContentLoaded", () => {
       lineValue.textContent = newLine;
       elSubtotal.textContent = newLine;
       elTotal.textContent = newLine + ship;
+
+      updateGrandTotal();
     };
+
+    
 
     btnInc.addEventListener("click", () => {
       const q = Math.max(1, (Number(inputQty.value) || 1) + 1);
@@ -128,4 +149,6 @@ document.addEventListener("DOMContentLoaded", () => {
   actions.querySelector('[data-action="finalizar"]').addEventListener("click", () => {
     alert("Implementar flujo de checkout");
   });
+  
+  updateGrandTotal();
 });

@@ -86,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         CartUtils.updateCartBadge();
 
         alert("¡Producto agregado al carrito!");
+        window.location.href = "cart.html";
       });
 
     })
