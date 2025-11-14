@@ -40,10 +40,127 @@
     </div>
   </nav>
   <main>
-    
+
     <div class="container">
       <h2>Mi carrito</h2>
       <div id="cartcontainer"></div>
+
+      <!-- Acá las secciones de compra -->
+      <div class="mt-5">
+        <ul class="nav nav-tabs" id="checkoutTabs">
+          <li class="nav-item">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-envio">Tipo de envío</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-direccion">Dirección</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-pago">Forma de pago</button>
+          </li>
+        </ul>
+
+        <div class="tab-content border p-4 bg-white">
+
+          <!-- tipos de envío-->
+          <div class="tab-pane fade show active" id="tab-envio">
+            <h4 class="mb-3">Tipo de envío</h4>
+
+            <div class="form-check">
+              <input class="form-check-input envio-option" type="radio" name="shipping" id="premium"
+                data-percent="0.15">
+              <label class="form-check-label" for="premium">
+                Premium (2 a 5 días) — 15%
+              </label>
+            </div>
+
+            <div class="form-check mt-2">
+              <input class="form-check-input envio-option" type="radio" name="shipping" id="express"
+                data-percent="0.07">
+              <label class="form-check-label" for="express">
+                Express (5 a 8 días) — 7%
+              </label>
+            </div>
+
+            <div class="form-check mt-2">
+              <input class="form-check-input envio-option" type="radio" name="shipping" id="standard"
+                data-percent="0.05">
+              <label class="form-check-label" for="standard">
+                Standard (12 a 15 días) — 5%
+              </label>
+            </div>
+          </div>
+
+          <!-- dirección-->
+          <div class="tab-pane fade" id="tab-direccion">
+            <h4 class="mb-3">Dirección de envío</h4>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Departamento</label>
+                <input id="dep" class="form-control" type="text">
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Localidad</label>
+                <input id="loc" class="form-control" type="text">
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Calle</label>
+                <input id="calle" class="form-control" type="text">
+              </div>
+
+              <div class="col-md-3">
+                <label class="form-label">Número</label>
+                <input id="numero" class="form-control" type="number">
+              </div>
+
+              <div class="col-md-3">
+                <label class="form-label">Esquina</label>
+                <input id="esquina" class="form-control" type="text">
+              </div>
+            </div>
+          </div>
+
+          <!-- forma de pago -->
+          <div class="tab-pane fade" id="tab-pago">
+            <h4 class="mb-3">Forma de pago</h4>
+
+            <div class="form-check">
+              <input class="form-check-input pago-option" type="radio" name="payment" id="tarjeta">
+              <label class="form-check-label" for="tarjeta">Tarjeta de crédito</label>
+            </div>
+
+            <div id="cardFields" class="mt-3 d-none">
+              <input class="form-control mb-2" id="card-number" placeholder="Número de tarjeta">
+              <input class="form-control mb-2" id="card-exp" placeholder="Vencimiento (MM/AA)">
+              <input class="form-control mb-2" id="card-cvv" placeholder="CVV">
+            </div>
+
+            <div class="form-check mt-3">
+              <input class="form-check-input pago-option" type="radio" name="payment" id="transfer">
+              <label class="form-check-label" for="transfer">Transferencia bancaria</label>
+            </div>
+
+            <div id="bankFields" class="mt-3 d-none">
+              <input class="form-control mb-2" id="bank-name" placeholder="Banco">
+              <input class="form-control mb-2" id="bank-account" placeholder="Número de cuenta">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- costos -->
+      <div class="mt-4 border p-4 bg-white rounded">
+        <h4>Costos</h4>
+        <p>Subtotal: $<span id="cost-subtotal">0</span></p>
+        <p>Costo de envío: $<span id="cost-envio">0</span></p>
+        <h5>Total: $<span id="cost-total">0</span></h5>
+
+        <button id="btnFinalizar" class="btn btn-primary mt-3">Finalizar compra</button>
+      </div>
+
       <h3 class="text-end mt-4">Total de compra: $<span id="grandTotal">0</span></h3>
     </div>
 
