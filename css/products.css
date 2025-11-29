@@ -186,24 +186,24 @@ aside p {
 }
 
 .product-details p strong {
-  color: #333333ab;
+  color: #8a8a8a;
   font-weight: 400;
 }
 
 #p-desc {
-  color: rgba(34, 34, 34, 0.726);
+  color: rgb(114, 114, 114);
   margin-top: 12px;
   font-size: 24px;
 }
 
 #p-category,
 #p-sold {
-  color: #333333ab;
+  color: #9c9c9c;
 
 }
 
 #p-price {
-  color: #444e;
+  color: rgb(94, 94, 94);
 }
 
 #p-buy {
@@ -233,7 +233,7 @@ aside p {
 #p-related h2 {
   text-align: start;
   margin: 8% 0 50px 10px;
-  color: #444e;
+  color: rgb(68, 68, 68);
 }
 
 .related-card {
