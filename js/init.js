@@ -1,12 +1,12 @@
-const API_BASE_URL = "http://localhost:3000/api";
-const CATEGORIES_URL = `${API_BASE_URL}/categories`;
-const PRODUCTS_URL = `${API_BASE_URL}/products`;
-const PRODUCT_INFO_URL = `${API_BASE_URL}/products/`;
-const PRODUCT_INFO_COMMENTS_URL = `${API_BASE_URL}/comments/`;
-const CART_INFO_URL = `${API_BASE_URL}/cart`; 
-const CART_BUY_URL = `${API_BASE_URL}/cart/buy`;
-const PUBLISH_PRODUCT_URL = `${API_BASE_URL}/sell`; 
-const EXT_TYPE = ""; 
+// MODO JSON (sin backend propio)
+const CATEGORIES_URL = "https://japceibal.github.io/emercado-api/cats/cat.json";
+const PRODUCTS_URL = "https://japceibal.github.io/emercado-api/cats_products/";
+const PRODUCT_INFO_URL = "https://japceibal.github.io/emercado-api/products/";
+const PRODUCT_INFO_COMMENTS_URL = "https://japceibal.github.io/emercado-api/products_comments/";
+const CART_INFO_URL = "https://japceibal.github.io/emercado-api/user_cart/";
+const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
+const PUBLISH_PRODUCT_URL = "https://japceibal.github.io/emercado-api/sell/";
+const EXT_TYPE = ".json";
 
 let showSpinner = function () {
   document.getElementById("spinner-wrapper").style.display = "block";
