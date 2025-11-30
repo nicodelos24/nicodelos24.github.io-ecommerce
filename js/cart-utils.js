@@ -1,5 +1,6 @@
 
 const CART_KEY = 'cart';
+const btnFinalizar = document.getElementById('btnFinalizar');
 
 function loadCart() {
   try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
@@ -25,3 +26,4 @@ function updateCartBadge() {
 document.addEventListener('DOMContentLoaded', updateCartBadge);
 
 window.CartUtils = { loadCart, saveCart, getCartCount, updateCartBadge };
+
