@@ -6,7 +6,13 @@ const categoriesRoutes = require('./src/routes/categories');
 const { login } = require('./src/controllers/authController');
 const authMiddleware = require('./src/middlewares/authMiddleware');
 const mariadb = require('mariadb');
-const pool = mariadb.createPool({host: "localhost", user: "root", password:"jap2025", connectionLimit: 5});
+const pool = mariadb.createPool({
+  host: "localhost", 
+  user: "root", 
+  password:"jap2025", 
+  database: "ecommerce",
+  connectionLimit: 5
+});
 
 const app = express();
 const PORT = 3000;
@@ -78,5 +84,8 @@ app.use('/api/products', authMiddleware, productsRoutes);
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
+
+
+
 });
 
